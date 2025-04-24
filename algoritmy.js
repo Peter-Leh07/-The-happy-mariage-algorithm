@@ -26,7 +26,6 @@ const men = [
 
   const superposition = [];
 
-  const pairs = []
   const getSuperPosition = (man , woman) => {
     for(let i = 0; i < man.length; i++){
         const idMen = man[i].id;
@@ -37,14 +36,14 @@ const men = [
             const womanRating = woman[j].ratings.findIndex(r => r === idMen)
             const manRating = man[i].ratings.findIndex(r => r === idWomen)
             const superpositionNumber = womanRating + manRating
-            const object = {
+            const pair = {
                 "superpositionNumber" : superpositionNumber,
                 "men" : idMen,
                 "women" : idWomen,
                 "woman-name" : womanName,
                 "man-name" : manName           
             }
-            superposition.push(object)
+            superposition.push(pair)
         }
     }
   } 
@@ -60,21 +59,15 @@ const men = [
   
     for (let i = 0; i < pairs.length; i++) {
       const pair = pairs[i];
-      if (pair.superpositionNumber === i) {
+      if (pair.superpositionNumber >= i) {
         finallPairs.push(pair);
-        //console.log(pair)
-        //console.log(finallPairs)
         const manId = pair.men;
         const womanId = pair.women;
-  
-        
         pairs = pairs.filter(p => p.men !== manId && p.women !== womanId);
-        console.log(pairs)
-        
-        i = i-1;
       }
+      i = -1;
     }
-    //console.log(finallPairs)
+    console.log(finallPairs)
     return finallPairs;
   };
 
