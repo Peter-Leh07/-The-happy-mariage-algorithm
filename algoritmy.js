@@ -1,79 +1,129 @@
 const men = [
-    { id: "1A", name: "Peter", ratings: ["3G", "1G", "7G", "10G", "4G", "9G", "8G", "6G", "2G", "5G"] },
-    { id: "2A", name: "Martin", ratings: ["5G", "9G", "3G", "1G", "7G", "6G", "8G", "2G", "10G", "4G"] },
-    { id: "3A", name: "Jozef", ratings: ["1G", "8G", "10G", "4G", "6G", "7G", "2G", "3G", "5G", "9G"] },
-    { id: "4A", name: "Marek", ratings: ["6G", "4G", "10G", "9G", "2G", "7G", "1G", "3G", "5G", "8G"] },
-    { id: "5A", name: "Lukas", ratings: ["7G", "10G", "4G", "3G", "1G", "6G", "2G", "8G", "9G", "5G"] },
-    { id: "6A", name: "Tomas", ratings: ["9G", "2G", "6G", "3G", "8G", "10G", "4G", "1G", "5G", "7G"] },
-    { id: "7A", name: "Adam", ratings: ["4G", "8G", "3G", "9G", "7G", "5G", "6G", "1G", "10G", "2G"] },
-    { id: "8A", name: "Jakub", ratings: ["1G", "3G", "8G", "7G", "5G", "10G", "4G", "9G", "2G", "6G"] },
-    { id: "9A", name: "Michal", ratings: ["2G", "7G", "9G", "6G", "5G", "1G", "4G", "3G", "10G", "8G"] },
-    { id: "10A", name: "Filip", ratings: ["8G", "4G", "6G", "3G", "7G", "1G", "9G", "5G", "10G", "2G"] }
-  ];
-  
-  const women = [
-    { id: "1G", name: "Anna", ratings: ["3A", "1A", "7A", "10A", "4A", "9A", "8A", "6A", "2A", "5A"] },
-    { id: "2G", name: "Maria", ratings: ["5A", "9A", "3A", "1A", "7A", "6A", "8A", "2A", "10A", "4A"] },
-    { id: "3G", name: "Katarina", ratings: ["1A", "8A", "10A", "4A", "6A", "7A", "2A", "3A", "5A", "9A"] },
-    { id: "4G", name: "Eva", ratings: ["6A", "4A", "10A", "9A", "2A", "7A", "1A", "3A", "5A", "8A"] },
-    { id: "5G", name: "Jana", ratings: ["7A", "10A", "4A", "3A", "1A", "6A", "2A", "8A", "9A", "5A"] },
-    { id: "6G", name: "Zuzana", ratings: ["9A", "2A", "6A", "3A", "8A", "10A", "4A", "1A", "5A", "7A"] },
-    { id: "7G", name: "Dominika", ratings: ["4A", "8A", "3A", "9A", "7A", "5A", "6A", "1A", "10A", "2A"] },
-    { id: "8G", name: "Lucia", ratings: ["1A", "3A", "8A", "7A", "5A", "10A", "4A", "9A", "2A", "6A"] },
-    { id: "9G", name: "Barbora", ratings: ["2A", "7A", "9A", "6A", "5A", "1A", "4A", "3A", "10A", "8A"] },
-    { id: "10G", name: "Veronika", ratings: ["8A", "4A", "6A", "3A", "7A", "1A", "9A", "5A", "10A", "2A"] }
-  ];
+  { name: "Peter", ratings: ["Katarina", "Anna", "Dominika", "Veronika", "Eva", "Barbora", "Lucia", "Zuzana", "Maria", "Jana"] },
+  { name: "Martin", ratings: ["Jana", "Barbora", "Katarina", "Anna", "Dominika", "Zuzana", "Lucia", "Maria", "Veronika", "Eva"] },
+  { name: "Jozef", ratings: ["Anna", "Lucia", "Veronika", "Eva", "Zuzana", "Dominika", "Maria", "Katarina", "Jana", "Barbora"] },
+  { name: "Marek", ratings: ["Zuzana", "Eva", "Veronika", "Barbora", "Maria", "Dominika", "Anna", "Katarina", "Jana", "Lucia"] },
+  { name: "Lukas", ratings: ["Dominika", "Veronika", "Eva", "Katarina", "Anna", "Zuzana", "Maria", "Lucia", "Barbora", "Jana"] },
+  { name: "Tomas", ratings: ["Barbora", "Maria", "Zuzana", "Katarina", "Lucia", "Veronika", "Eva", "Anna", "Jana", "Dominika"] },
+  { name: "Adam", ratings: ["Eva", "Lucia", "Katarina", "Barbora", "Dominika", "Jana", "Zuzana", "Anna", "Veronika", "Maria"] },
+  { name: "Jakub", ratings: ["Anna", "Katarina", "Lucia", "Dominika", "Jana", "Veronika", "Eva", "Barbora", "Maria", "Zuzana"] },
+  { name: "Michal", ratings: ["Maria", "Dominika", "Barbora", "Zuzana", "Jana", "Anna", "Eva", "Katarina", "Veronika", "Lucia"] },
+  { name: "Filip", ratings: ["Lucia", "Eva", "Zuzana", "Katarina", "Dominika", "Anna", "Barbora", "Jana", "Veronika", "Maria"] }
+];
 
-  const superposition = [];
+const women = [
+  { name: "Anna", ratings: ["Jozef", "Peter", "Adam", "Filip", "Marek", "Michal", "Jakub", "Tomas", "Martin", "Lukas"] },
+  { name: "Maria", ratings: ["Lukas", "Michal", "Jozef", "Peter", "Adam", "Tomas", "Jakub", "Martin", "Filip", "Marek"] },
+  { name: "Katarina", ratings: ["Peter", "Jakub", "Filip", "Marek", "Tomas", "Adam", "Martin", "Jozef", "Lukas", "Michal"] },
+  { name: "Eva", ratings: ["Tomas", "Marek", "Filip", "Michal", "Martin", "Adam", "Peter", "Jozef", "Lukas", "Jakub"] },
+  { name: "Jana", ratings: ["Adam", "Filip", "Marek", "Jozef", "Peter", "Tomas", "Martin", "Jakub", "Michal", "Lukas"] },
+  { name: "Zuzana", ratings: ["Michal", "Martin", "Tomas", "Jozef", "Jakub", "Filip", "Marek", "Peter", "Lukas", "Adam"] },
+  { name: "Dominika", ratings: ["Marek", "Jakub", "Jozef", "Michal", "Adam", "Lukas", "Tomas", "Peter", "Filip", "Martin"] },
+  { name: "Lucia", ratings: ["Peter", "Jozef", "Jakub", "Adam", "Lukas", "Filip", "Marek", "Michal", "Martin", "Tomas"] },
+  { name: "Barbora", ratings: ["Martin", "Adam", "Michal", "Tomas", "Lukas", "Peter", "Marek", "Jozef", "Filip", "Jakub"] },
+  { name: "Veronika", ratings: ["Jakub", "Marek", "Tomas", "Jozef", "Adam", "Peter", "Michal", "Lukas", "Filip", "Martin"] }
+];
 
-  const getSuperPosition = (man , woman) => {
-    for(let i = 0; i < man.length; i++){
-        const idMen = man[i].id;
-        const manName =  man[i].name
-        for(let j = 0; j < woman.length; j++){
-            const idWomen = woman[j].id
-            const womanName =   woman[j].name;
-            const womanRating = woman[j].ratings.findIndex(r => r === idMen)
-            const manRating = man[i].ratings.findIndex(r => r === idWomen)
-            const superpositionNumber = womanRating + manRating
-            const pair = {
-                "superpositionNumber" : superpositionNumber,
-                "men" : idMen,
-                "women" : idWomen,
-                "woman-name" : womanName,
-                "man-name" : manName           
-            }
-            superposition.push(pair)
-        }
-    }
-  } 
-  
-  const getOrderedSuperPositions = (superpositions) => {
-    const sortedPositions = [...superpositions].sort((a , b) => a.superpositionNumber - b.superpositionNumber)
-    console.log(sortedPositions)
-    createIdealPairs(sortedPositions)
-  }
-  
-  const createIdealPairs = (pairs) => {
-    let finallPairs = [];
-  
-    for (let i = 0; i < pairs.length; i++) {
-      const pair = pairs[i];
-      if (pair.superpositionNumber >= i) {
-        finallPairs.push(pair);
-        const manId = pair.men;
-        const womanId = pair.women;
-        pairs = pairs.filter(p => p.men !== manId && p.women !== womanId);
-      }
-      i = -1;
-    }
-    console.log(finallPairs)
-    return finallPairs;
+const superposition = [];
+
+const getUniqueIds = (someMan, someWoman) => {
+  const usedIds = new Set();
+
+  someMan.forEach(man => usedIds.add(man.id));
+  someWoman.forEach(woman => usedIds.add(woman.id));
+
+  const generateId = () => {
+    const number = Math.floor(Math.random() * 1000); 
+    const letter = String.fromCharCode(65 + Math.floor(Math.random() * 26)); 
+    return `${number}${letter}`;
   };
 
+  const getUniqueId = () => {
+    let id;
+    do {
+      id = generateId();
+    } while (usedIds.has(id)); 
+    usedIds.add(id); 
+    return id;
+  };
 
+  
+  someMan.forEach(man => {
+    man.id = getUniqueId();
+  });
+
+  someWoman.forEach(woman => {
+    woman.id = getUniqueId();
+  });
+};
+
+const convertNamesInRatingsToIds = (someMan, someWoman) => {
+  someMan.forEach(man => {
+    man.ratings = man.ratings.map(rating => {
+      const womanId = someWoman.find(w => w.name === rating)?.id;
+      return womanId || rating
+    });
+  });
+  someWoman.forEach(woman => {
+    woman.ratings = woman.ratings.map(rating => {
+      const manId = someMan.find(m => m.name === rating)?.id;
+      return manId || rating
+    });
+  });
+};
+
+const getSuperPosition = (man , woman) => {
+  for(let i = 0; i < man.length; i++){
+      const idMen = man[i].id;
+      const manName =  man[i].name
+      for(let j = 0; j < woman.length; j++){
+          const idWomen = woman[j].id
+          const womanName =   woman[j].name;
+          const womanRating = woman[j].ratings.findIndex(r => r === idMen)
+          const manRating = man[i].ratings.findIndex(r => r === idWomen)
+          const superpositionNumber = womanRating + manRating
+          const pair = {
+              "superpositionNumber" : superpositionNumber,
+              "men" : idMen,
+              "women" : idWomen,
+              "woman-name" : womanName,
+              "man-name" : manName           
+          }
+          superposition.push(pair)
+      }
+  }
+} 
+
+const getOrderedSuperPositions = (superpositions) => {
+  const sortedPositions = [...superpositions].sort((a , b) => a.superpositionNumber - b.superpositionNumber)
+  console.log(sortedPositions)
+  createIdealPairs(sortedPositions)
+}
+
+const createIdealPairs = (pairs) => {
+  let finallPairs = [];
+
+  for (let i = 0; i < pairs.length; i++) {
+    const pair = pairs[i];
+    if (pair.superpositionNumber >= i) {
+      finallPairs.push(pair);
+      const manId = pair.men;
+      const womanId = pair.women;
+      pairs = pairs.filter(p => p.men !== manId && p.women !== womanId);
+    }
+    i = -1;
+  }
+  console.log(finallPairs)
+  return finallPairs;
+};
+const happyMariageAlgorithm = () => {
+  getUniqueIds(men , women)
+  convertNamesInRatingsToIds(men , women)
   getSuperPosition(men , women)
   getOrderedSuperPositions(superposition)
+}
+
+export default happyMariageAlgorithm();
   
 
   
